@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>
             
-                {% block title %}Nauč se Python{% endblock title %}
+                {% block title %}PyLadies Vienna Python course{% endblock title %}
             
         </title>
 
@@ -32,9 +32,11 @@
     <body>
         <nav class="header">
             <ul class="container menu">
-                <li><a href="{{ url_for('index') }}" class="logo"><h1>Nauč se Python!</h1></a></li>
+                <li><a href="{{ url_for('index') }}" class="logo"><h1>PyLadies Vienna Python beginners course</h1></a></li>
+                <!-- >
                 <li><a href="{{ url_for('courses') }}" class="menu-link"><h2>Materiály</h2></a></li>
                 <li><a href="{{ url_for('runs') }}" class="menu-link"><h2>Kurzy</h2></a></li>
+                <-->
             </ul>
         </nav>
 
@@ -46,22 +48,10 @@
         <div class="footer container">
             <hr>
             <div class="lesson-attribution">
-                {% if edit_info is defined and edit_info and edit_info.page_name %}
-                    <p>
-                        Uprav tuto stránku na
-                        <a href="{{ edit_info.url }}">
-                            {% if edit_info.icon  %}
-                                {{ bytesize_icon(edit_info.icon) }}
-                            {% endif %}
-                          {{ edit_info.page_name }}
-                        </a>
-                    </p>
-                {% endif %}
-
                 {% block attributions %}{% endblock %}
                 {% block license %}
                     <p>
-                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> není-li uvedeno jinak
+                        Licence: <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
                     </p>
                 {% endblock license %}
                 {% block extra_footer %}{% endblock %}

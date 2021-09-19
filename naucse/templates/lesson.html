@@ -40,7 +40,7 @@
 
 {% block course_content %}
     {% if solution|default(None) is not none %}
-        <h1>{{ page.title }} – Řešení [{{ solution.index }}]</h1>
+        <h1>{{ page.title }} – Solution [{{ solution.index }}]</h1>
     {% endif %}
 
     {{ content }}
@@ -62,7 +62,7 @@
     </p>
     {% if page.license_code %}
         <p>
-            Licence ukázek kódu:
+            Licence of code samples:
             <a href="{{ page.license_code.url }}">
                 {{ page.license_code.title }}
             </a>
@@ -82,12 +82,12 @@
                 {{ nav.prev(mat.prev.get_url(), mat.prev.title) }}
             {% endif %}
             {% if mat.session %}
-                {{ nav.up(mat.session.get_url(), 'Lekce: ' + mat.session.title) }}
+                {{ nav.up(mat.session.get_url(), 'Lesson: ' + mat.session.title) }}
             {% endif %}
             {% if mat.next %}
                 {{ nav.next(mat.next.get_url(), mat.next.title) }}
             {% elif mat.session %}
-                {{ nav.next(mat.session.pages['back'].get_url(), 'Závěr lekce') }}
+                {{ nav.next(mat.session.pages['back'].get_url(), 'End of lesson') }}
             {% endif %}
         {% endcall %}
 
@@ -120,18 +120,4 @@
 {%- endblock %}
 
 {% block lesson_end -%}
-        {% if page.lesson.material and not is_canonical_lesson %}
-        <hr class="lesson-end">
-
-        {% if not page.course.canonical %}
-            <div class="alert alert-info">
-                Toto je stránka lekce z kurzu, který probíhá nebo proběhl naživo s instruktorem.
-                {% if page.course.derives %}
-                    {% if canonical_url %}
-                        <a href="{{ canonical_url }}">Přejít na stejnou lekci v kurzu pro samouky</a>.
-                    {% endif %}
-                {% endif %}
-            </div>
-        {% endif %}
-        {%- endif %}
 {%- endblock %}
