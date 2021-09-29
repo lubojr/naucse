@@ -405,7 +405,7 @@ def test_get_footer_links(model):
     assert session_link["url"] == "/course/test-course/sessions/first-session/"
 
     assert isinstance(next_link, dict)
-    assert next_link["title"] == "Závěr lekce"
+    assert next_link["title"] == "End of lecture"
     assert next_link["url"] == "/course/test-course/sessions/first-session/back/"
 
     # test first lesson of a session with a previous session
