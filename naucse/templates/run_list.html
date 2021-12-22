@@ -1,10 +1,10 @@
 {% extends '_course_list.html' %}
 
-{% block title %}Seznam offline kurzů Pythonu{% endblock title %}
+{% block title %}List of offline Python courses{% endblock title %}
 
 {% block intro %}
 
-    <p>Zde se nachází seznam kurzů s instruktorem. Kurzy pro samouky najdete <a href="{{ url_for('courses') }}">v seznamu materiálů</a>.</p>
+    <p>Here you can find a list of materials for lectures taught by mentors. List of materials for self-study courses can be found <a href="{{ url_for('courses') }}">in the courses.</a></p>
 
 {% endblock %}
 
@@ -31,7 +31,7 @@
                    href="{{ url_for('runs', **paginate_prev) }}">&lt;</a>
             </li>
             <li class="paginate-link {% if year==None and all==None %}current{% endif %}">
-                 <a href="{{ url_for('runs', year=None) }}">Aktuální</a>
+                 <a href="{{ url_for('runs', year=None) }}">Current</a>
             </li>
             {% for page in all_years | reverse %}
                 <li class="paginate-link {% if page==year %}current{% endif %}">
@@ -39,7 +39,7 @@
                 </li>
             {% endfor %}
             <li class="paginate-link {% if all!=None %}current{% endif %}">
-                 <a href="{{ url_for('runs', year=None, all='all') }}">Vše</a>
+                 <a href="{{ url_for('runs', year=None, all='all') }}">All</a>
             </li>
             <li class="paginate-next">
                 <a {% if all!=None %}class="disabled"{% endif %}
@@ -52,19 +52,19 @@
 {% block list %}
 
     {% if all is none and year is none %}
-        <h1>Aktuální kurzy</h1>
+        <h1>Current courses</h1>
         {% if run_data["ongoing"] | length > 0 %}
             {% for run in run_data["ongoing"].values() | sort(attribute='start_date', reverse=True) %}
                 {{ show_run(run) }}
             {% endfor %}
         {% else %}
             <div class="empty-run-list">
-                Nemáme žádné aktuální kurzy.
+                We do not run any courses at the moment. Stay tuned for announcement of new openings.
             </div>
         {% endif %}
 
         {% if run_data["recent"] | length > 0 %}
-            <h1>Proběhlé kurzy</h1>
+            <h1>Previous courses</h1>
 
             {{ pagination() }}
             {% for run in run_data["recent"].values() | sort(attribute='start_date', reverse=True) %}
@@ -76,7 +76,7 @@
         {% if year %}
             <h1>{{ year }}</h1>
         {% else %}
-            <h1>Všechny kurzy</h1>
+            <h1>All courses</h1>
         {% endif %}
         {% for section, run_year in run_data.items() | sort(reverse=True) %}
             {% if (run_data | length) > 1 %}
@@ -86,7 +86,7 @@
                 {{ show_run(run) }}
             {% else %}
                 <div class="empty-run-list">
-                    V tomto roce neproběhly žádné kurzy.
+                   During this year no courses took place.
                 </div>
             {% endfor %}
         {% endfor %}
