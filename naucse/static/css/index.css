@@ -2,7 +2,7 @@ nav.header {
     background-color: #fff;
 }
 nav.header * {
-    color: #3fb0ac;
+    color: #E63D40;
 }
 
 .motivation {
@@ -34,15 +34,15 @@ nav.header * {
 }
 
 .btn-primary, .btn-primary:active, .btn-primary:focus {
-    background-color: #3fb0ac;
+    background-color: #E63D40;
     outline-color: white;
     border-color: #296e62;
     color: white;
 }
 .btn-primary:active, .btn-primary:focus {
-    outline-color: #3fb0ac;
+    outline-color: #E63D40;
 }
 .btn-primary:hover {
     background-color: #296e62;
-    outline-color: #3fb0ac;
+    outline-color: #E63D40;
 }
