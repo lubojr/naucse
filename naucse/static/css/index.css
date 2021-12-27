@@ -1,8 +1,8 @@
 nav.header {
-    background-color: #fff;
+    background-color: #E63D40;
 }
 nav.header * {
-    color: #E63D40;
+    color: rgba(255,255,255);
 }
 
 .motivation {
