@@ -106,7 +106,7 @@ register_url_converters(app)
 setup_jinja_env(app.jinja_env)
 
 @app.route("/mentorship/")
-def courses():
+def mentorship():
     return render_template(
         "mentorship.html",
     )
