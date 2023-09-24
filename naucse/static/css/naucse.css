@@ -329,7 +329,7 @@ body > footer {
 
   /* Team section */
 
-.team {
+.team, .mentors {
 	display: grid;
   margin-top: 40px;
 	-ms-flex-pack: distribute;
@@ -406,6 +406,9 @@ h2.course-city-heading {
   .team {
   	grid-template-columns: repeat(auto-fill, 300px);
   }
+  .mentors {
+    grid-template-columns: repeat(auto-fill, 220px);
+  }
   h2.course-city-heading {
     margin-top: 40px;
   }
@@ -414,7 +417,7 @@ h2.course-city-heading {
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	/* style for IE 10-11 */
-	.meetup, .team {
+	.team,.mentors {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
