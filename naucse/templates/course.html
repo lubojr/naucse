@@ -41,7 +41,27 @@
     {{ material_list(session.materials) }}
 </div>
 {%- endfor %}
-
+{% if course.mentors %}
+<div id="mentor-team" class="container" >
+    <h2>Mentors for this run</h2>
+    <div class="mentors ">
+    {% for member in course.mentors %}
+        <div class="person">
+            <div class="member-photo">
+                <img src="{{ url_for('static', filename=member.img) }}" class="img-circle" />
+            </div>
+            <h5 class="member-name"><strong>{{ member.name }}</strong></h5>
+            <span><em>{{ member.role }}</em></span>
+            <ul>
+                {%- for link in member.links -%}{%- for type, url in link.items() -%}
+                <li><a href="{{ url }}"><img src="{{ url_for('static', filename='img/links/{}-link.png'.format(type)) }}" /></a></li>
+                {%- endfor -%}{%- endfor -%}
+            </ul>
+        </div>
+    {%- endfor %}
+    </div>
+</div>
+{% endif%}
         {% endblock %}
     </div>
     <div class="{% if not course.is_meta %}col-lg-4{% endif %}">

@@ -647,6 +647,76 @@ class AnyDictConverter(BaseConverter):
     def get_schema(cls, context):
         return {'type': 'object'}
 
+class MentorsListConverter(BaseConverter):
+    """Converter of List of mentors each containing dictionary with name,
+    path to image and list of personal links"""
+    def load(self, data, context):
+        return data
+
+    def dump(self, value, context):
+        return value
+
+    @classmethod
+    def get_schema(cls, context):
+        return {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "img": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "mail": {
+                                    "type": "string"
+                                },
+                                "linkedin": {
+                                    "type": "string"
+                                },
+                                "github": {
+                                    "type": "string"
+                                },
+                                "twitter": {
+                                    "type": "string"
+                                },
+                                "facebook": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                }
+                            },
+                            "title": "Link",
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                ],
+                "title": "Mentor",
+                "examples": [{
+                    "name": "Test Testerson",
+                    "img": "img/team/testersont.jpg",
+                    "role": "Founder, organizer - courses, mentorship programme",
+                    "links": [{
+                        "mail": "mailto:testerson.test@gmail.com"
+                    }, {
+                        "linkedin": "https://www.linkedin.com/in/test-testerson/"
+                    }],
+                }]
+            }
+        }
+
 
 def time_from_string(time_string):
     """Get datetime.time object from a 'HH:MM' or 'HH:MM+ZZZZ' string"""
@@ -747,6 +817,9 @@ class Course(Model):
     place = Field(
         str, optional=True,
         doc="Human-readable description of the venue")
+    mentors = Field(
+        MentorsListConverter(), factory=list, optional=True,
+        doc="List of mentors participating in course")
     time_description = Field(
         str, optional=True,
         doc="Human-readable description of the time the course takes place "
