@@ -404,7 +404,7 @@ h2.course-city-heading {
 }
 @media all and (min-width:1000px) {
   .team {
-  	grid-template-columns: repeat(auto-fill, 275px);
+  	grid-template-columns: repeat(auto-fill, 300px);
   }
   h2.course-city-heading {
     margin-top: 40px;

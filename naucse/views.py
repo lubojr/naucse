@@ -144,9 +144,10 @@ def mentorship():
 
 @app.route('/')
 def index():
+    team = read_yaml('{}/teams/vienna.yml'.format(app.root_path))
     return render_template("index.html",
         edit_info=g.model.edit_info,
-        team=read_yaml('teams/vienna.yml', default=()),
+        team=team,
     )
 
 
