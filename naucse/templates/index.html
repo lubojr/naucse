@@ -71,4 +71,24 @@
   </div>
 </section>
 
+<section id="org-team" class="container" >
+  <h2 class="course-city-heading">PyLadies Vienna Organizational Team</h2>
+  <div class="team ">
+    {% for member in team %}
+      <div class="person">
+        <div class="member-photo">
+          <img src="{{ url_for('static', filename='img/team/{}'.format(member.img)) }}" class="img-circle" />
+        </div>
+        <h5 class="member-name"><strong>{{ member.name }}</strong></h5>
+        <span><em>{{ member.role }}</em></span>
+        <ul>
+          {%- for link in member.links -%}{%- for type, url in link.items() -%}
+            <li><a href="{{ url }}"><img src="{{ url_for('static', filename='img/links/{}-link.png'.format(type)) }}" /></a></li>
+          {%- endfor -%}{%- endfor -%}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock %}
