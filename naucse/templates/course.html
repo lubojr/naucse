@@ -9,11 +9,28 @@
 
 {% block course_content %}
 <div class="row">
-    <div class="col-lg-8 {% if course.is_meta %}col-lg-12{% endif %}">
+    <div class="col-lg-12">
         {% block course_overview %}
               <h1>{{ course.title }}</h1>
-{% if course.place and course.time_description %}
-    <div class="details">{{course.place}}, {{course.time_description}}</div>
+
+{% if course.start_date %}
+    <div class="card course-card text-center">
+        <div class="card-body">
+            <div class="calendar-dates">
+                {{ (course.start_date, course.end_date) | format_date_range }}
+            </div>
+            {% if course.default_time %}
+                <div class="default-times">
+                    {{ course.default_time['start'] | format_time }}
+                    –
+                    {{ course.default_time['end'] | format_time }}
+                </div>
+            {% endif %}
+            {% if course.place %}
+                <div class="details">{{course.place}}</div>
+            {% endif %}
+        </div>
+    </div>
 {% endif %}
 
 {% if course.subtitle != None %}
@@ -63,24 +80,6 @@
 </div>
 {% endif%}
         {% endblock %}
-    </div>
-    <div class="{% if not course.is_meta %}col-lg-4{% endif %}">
-        {% if course.start_date %}
-            <div class="card course-card text-center">
-                <div class="card-body">
-                    <div class="calendar-dates">
-                        {{ (course.start_date, course.end_date) | format_date_range }}
-                    </div>
-                    {% if course.default_time %}
-                        <div class="default-times">
-                            {{ course.default_time['start'] | format_time }}
-                            –
-                            {{ course.default_time['end'] | format_time }}
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-        {% endif %}
     </div>
 </div>
 {% endblock %}
