@@ -19,7 +19,7 @@
     </div>
     <div class="col-xs-12 col-md-4">
       <img height="150" src="/static/img/who.png">
-      <h2 class="about-title">For whom?</h2>
+      <h2 class="about-title">What are we doing?</h2>
       <div class="about-p">
         Our most important activity in PyLadies Vienna are online semestral <a href="{{ url_for('runs') }}" target="_blank">Python beginners courses</a>. They will lead you
         through complete Python programming fundamentals in an entertaining way. No boring math, all lessons are taught
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div style="margin-top: 16px;margin-bottom: 10px;">
     <h3 class="col-xs-12" text-center>Additional to the courses, we do:</h3>
   </div>
   <div class="row">
@@ -50,12 +50,18 @@
       <img height="150" src="/static/img/computer-lady-icon.png" class="keyfeature-icon">
       <h2 class="about-title">Discord and newsletter</h2>
       <div class="about-p">
+        <p>
         We maintain a Discord group where we support an online community of PyLadies connected to our courses, Python meetups in Vienna and amazing IT related topics.
         <form action="https://discord.gg/v2qdvbD2dn">
           <input class="form-control discord-join" type="submit" value="Join our Discord!" />
         </form>
+        </p>
+        <p>
         We also create a newsletter informing about our planned activities and selected Python news and tips.
-        Sign up <a href="//forms.gle/Xq6VEXVsB6Q2NVSi8">on a following link</a>.
+        <form action="//forms.gle/Xq6VEXVsB6Q2NVSi8">
+          <input class="form-control discord-join" type="submit" value="Sign up for newsletter!" />
+        </form>
+        </p>
       </div>
     </div>
     <div class="col-xs-12 col-md-4">
@@ -70,7 +76,7 @@
 
 {% include 'testimonials.html' %}
 
-<section id="news" class="container content-section ">
+<section id="news" class="container content-section " style="margin-top: 30px;">
   <div class="container">
     <div class="row">
       <h2 id="news-main-title">News</h2>

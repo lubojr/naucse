@@ -142,6 +142,11 @@ def mentorship():
         "mentorship.html",
     )
 
+@app.route("/sponsorship/")
+def sponsorship():
+    return render_template(
+        "sponsorship.html",
+    )
 
 @app.route("/agb/")
 def agb():
