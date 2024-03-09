@@ -142,6 +142,13 @@ def mentorship():
         "mentorship.html",
     )
 
+
+@app.route("/agb/")
+def agb():
+    return render_template(
+        "agb.html",
+    )
+
 @app.route('/')
 def index():
     team = read_yaml('{}/teams/vienna.yml'.format(app.root_path))

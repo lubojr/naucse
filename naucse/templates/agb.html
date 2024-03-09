@@ -1,0 +1,46 @@
+{% extends '_base.html' %} {% block extra_links %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+{% endblock extra_links%} {% block content %}
+
+<section id="news" class="container content-section">
+  <div class="container">
+    <div class="row">
+      <h2 id="news-main-title">AGB && Impressum</h2>
+    </div>
+    <div class="row">
+      <p>
+        PyLadies Vienna ist ein gemeinnütziger Verein von:
+        <br />
+        Týna Doležalová, Lubomír Doležal, Fabian Schindler-Strauss
+        <br />
+        PyLadies Vienna - Verein zur Förderung von Frauen und anderen
+        unterrepräsentierten Menschen in Informationstechnologieberufen
+        <br />
+        Heinrich-Collinstrasse 27/2/6, 1140 Wien
+        <br />
+        ZVR-Zahl: 1312186361
+      </p>
+      <p>
+        Rechnungen enthalten keine MWSt – Umsatzsteuerbefreit entsprechend der
+        Kleinunternehmerregelung.
+        <br />
+        Es gelten die AGB der WKO/UBIT:
+        <a
+          href="https://electrobabe.files.wordpress.com/2008/01/agb_betreiberdienstleistung2014_final_2.pdf"
+          target="_blank"
+          >Allgemeine Geschäftsbedingungen für Betreiberdienstleistungen in der
+          Informationstechnologie Ausgabe 2014</a
+        >
+      </p>
+    </div>
+    <div class="row">
+      <h2 id="news-main-title">Contact Us!</h2>
+    </div>
+    <div class="row">
+      If you have any questions please feel free to contact via email
+      <a href="mailto:pyladies.vienna@gmail.com">pyladies.vienna@gmail.com</a>!
+    </div>
+  </div>
+</section>
+
+{% endblock %}

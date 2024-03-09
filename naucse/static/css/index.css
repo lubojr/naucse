@@ -95,3 +95,7 @@ nav.header * {
     width: 50%;
     margin: 0 auto;
 }
+
+.row {
+    margin-bottom: 10px;
+}
