@@ -6,6 +6,70 @@
 
 {% block content %}
 
+<section id="about" class="container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/qa.png" class="keyfeature-icon">
+      <h2 class="about-title">Who are PyLadies?</h2>
+      <div class="about-p">
+        PyLadies is an international mentorship group with a focus on helping more women become active participants and
+        leaders in the Python open-source community. Our mission is to promote, educate and advance a diverse Python
+        community through outreach, education, conferences, events and social gatherings.
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/who.png">
+      <h2 class="about-title">For whom?</h2>
+      <div class="about-p">
+        Our most important activity in PyLadies Vienna are online semestral <a href="{{ url_for('runs') }}" target="_blank">Python beginners courses</a>. They will lead you
+        through complete Python programming fundamentals in an entertaining way. No boring math, all lessons are taught
+        on easily imaginable examples and even programming of simple games.
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/computer.png" class="keyfeature-icon">
+      <h2 class="about-title">What do you need?</h2>
+      <div class="about-p">
+        In order to start, you need only motivation, enough free time and your own computer on which you can start to
+        learn programming - with permission to install new software.
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3 class="col-xs-12" text-center>Additional to the courses, we do:</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/mentorship-logo.png" class="keyfeature-icon">
+      <h2 class="about-title">Mentorship programme</h2>
+      <div class="about-p">
+        We run a <a href="{{ url_for('mentorship') }}" target="_blank">mentorship programme</a> connecting mentees with mentors based on needs and wishes of the mentee and expertise of the mentors with focus on Python and other IT topics.
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/computer-lady-icon.png" class="keyfeature-icon">
+      <h2 class="about-title">Discord and newsletter</h2>
+      <div class="about-p">
+        We maintain a Discord group where we support an online community of PyLadies connected to our courses, Python meetups in Vienna and amazing IT related topics.
+        <form action="https://discord.gg/v2qdvbD2dn">
+          <input class="form-control discord-join" type="submit" value="Join our Discord!" />
+        </form>
+        We also create a newsletter informing about our planned activities and selected Python news and tips.
+        Sign up <a href="//forms.gle/Xq6VEXVsB6Q2NVSi8">on a following link</a>.
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <img height="150" src="/static/img/code-icon.png" class="keyfeature-icon">
+      <h2 class="about-title">Workshops and meetings</h2>
+      <div class="about-p">
+        Offline community is also of great importance to us and it doesn't end with the beginner's course. If you want to continue with PyLadies, join our follow-up meetings in Vienna where you can come with your own project for advice and help. We also organize <a href="https://www.meetup.com/PyLadies-Vienna/" target="_blank">offline workshops</a> on specific topics.
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'testimonials.html' %}
+
 <section id="news" class="container content-section ">
   <div class="container">
     <div class="row">
@@ -27,57 +91,17 @@
       <div class="news-width">
         <h3 class="news-title">Planned courses</h3>
         <div class="news-content">
-          <h4 class="news-title">7th Python beginners course - Spring 2024</h4>
+          <h4 class="news-title">8th Python beginners course - Autumn 2024</h4>
           <p>
-            It is aimed for complete beginners without any previous experience in programming.
-            We will go through basic Python syntax, data types and structures and we will work on two projects along the way. You can find the full curriculum <a href="/2024/pyladies-en-vienna-2024-spring/">in the course details</a>.
-            The course will be run for two hours each week in a virtual classroom for around 25 attendees and several mentors.
+            We are planning to open a 8th run of online <b>Python programming</b> beginners course in English starting in <b>Autumn 2024</b>, running for 13 weeks. It is aimed for complete beginners without any previous experience in programming. We will go through basic Python syntax, data types and structures and we will work on two projects along the way. The course will be run for two hours each week in a virtual classroom for around 25 attendees and several mentors.
           </p>
           <p>
-            If you are interested to join as an <b>attendee</b>, please fill the <a href="//forms.gle/ksAoS1VYSKGZo7c17">registration google form</a> and let us know about yourself. We usually receive more applications than there are free slots. In that case we will need to select participants based on the answers from the form.
-          </p>
-          <p>If you would like to join as a <b>mentor</b>, thank you, you are AWESOME! Please send us an email to pyladies.vienna@gmail.com with a short description about you and and we will get back to you as soon as possible!
-          </p>
-          <p>
-            If you can not attend this course but want a reminder for when we open the registrations for future courses, please submit your email to us: <a href="//forms.gle/Xq6VEXVsB6Q2NVSi8">in this form</a>.
+            If you want a reminder for when we open the registrations, please submit your email to us to join the PyLadies Vienna newsletter: <a href="//forms.gle/Xq6VEXVsB6Q2NVSi8">in this form</a>
           </p>
         </div>
       </div>
     </div>
 </section>
-
-<section id="about" class="container text-center">
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <img height="150" src="/static/img/qa.png" class="keyfeature-icon">
-      <h2 class="about-title">Who are PyLadies?</h2>
-      <div class="about-p">
-        PyLadies is an international mentorship group with a focus on helping more women become active participants and
-        leaders in the Python open-source community. Our mission is to promote, educate and advance a diverse Python
-        community through outreach, education, conferences, events and social gatherings.
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <img height="150" src="/static/img/who.png">
-      <h2 class="about-title">For whom?</h2>
-      <div class="about-p">
-        Our most important activity in PyLadies Vienna are online semestral Python beginners courses. They will lead you
-        through complete Python programming fundamentals in an entertaining way. No boring math, all lessons are taught
-        on easily imaginable examples and even programming of simple games.
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <img height="150" src="/static/img/computer.png" class="keyfeature-icon">
-      <h2 class="about-title">What do you need?</h2>
-      <div class="about-p">
-        In order to start, you need only motivation, enough free time and your own computer on which you can start to
-        learn programming - with permission to install new software.
-      </div>
-    </div>
-  </div>
-</section>
-
-{% include 'testimonials.html' %}
 
 <section id="org-team" class="container">
   <h2 class="course-city-heading">PyLadies Vienna Organizational Team</h2>
