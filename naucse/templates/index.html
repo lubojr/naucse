@@ -119,12 +119,14 @@
       </div>
       <h5 class="member-name"><strong>{{ member.name }}</strong></h5>
       <span><em>{{ member.role }}</em></span>
+      {%- if member.links %}
       <ul>
         {%- for link in member.links -%}{%- for type, url in link.items() -%}
         <li><a href="{{ url }}"><img src="{{ url_for('static', filename='img/links/{}-link.png'.format(type)) }}" /></a>
         </li>
         {%- endfor -%}{%- endfor -%}
       </ul>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
